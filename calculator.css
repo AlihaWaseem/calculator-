@@ -1,0 +1,207 @@
+/* style.css for BizzCalc - Business Smart Calculator */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+  background: #1e1e2f;
+  color: #f5f5f5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+body.dark .container {
+  background: #2c2c3e;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+body.dark h1 {
+  color: #f1f1f1;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px;
+  background: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 100px;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  background: #2980b9;
+}
+
+.calc-section {
+  display: none;
+}
+
+.calc-section.active {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background: white;
+  color: black;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark input,
+body.dark select,
+body.dark button {
+  background: #3c3c50;
+  color: #fff;
+  border-color: #666;
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #27ae60;
+}
+
+#profitResult,
+#percentageResult,
+#discountResult,
+#taxResult,
+#unitResult,
+#expenseList,
+#totalExpense,
+#currencyResult,
+#loanResult,
+#splitResult {
+  background: #ecf0f1;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+body.dark #profitResult,
+body.dark #percentageResult,
+body.dark #discountResult,
+body.dark #taxResult,
+body.dark #unitResult,
+body.dark #expenseList,
+body.dark #totalExpense,
+body.dark #currencyResult,
+body.dark #loanResult,
+body.dark #splitResult {
+  background: #3a3a4d;
+}
+
+a[href^="https://wa.me"] {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 8px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+a[href^="https://wa.me"]:hover {
+  background: #1ebe5d;
+}
+
+body.dark a[href^="https://wa.me"] {
+  background: #128C7E;
+}
+
+#waShareSplit,
+#waShareProfit,
+#waSharePercentage,
+#waShareDiscount,
+#waShareTax,
+#waShareUnit,
+#waShareExpense,
+#waShareCurrency,
+#waShareLoan {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 8px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#waShareSplit:hover,
+#waShareProfit:hover,
+#waSharePercentage:hover,
+#waShareDiscount:hover,
+#waShareTax:hover,
+#waShareUnit:hover,
+#waShareExpense:hover,
+#waShareCurrency:hover,
+#waShareLoan:hover {
+  background: #1ebe5d;
+}
+
+body.dark #waShareSplit,
+body.dark #waShareProfit,
+body.dark #waSharePercentage,
+body.dark #waShareDiscount,
+body.dark #waShareTax,
+body.dark #waShareUnit,
+body.dark #waShareExpense,
+body.dark #waShareCurrency,
+body.dark #waShareLoan {
+  background: #128C7E;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+

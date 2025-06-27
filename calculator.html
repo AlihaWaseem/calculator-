@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BizzCalc - Business Smart Calculator</title>
+  <link rel="stylesheet" href="calculator.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>BizzCalc <button onclick="toggleDarkMode()">🌗 Toggle Theme</button></h1>
+
+    <div class="tabs">
+      <button class="tab-button active" onclick="openCalc('profit')">Profit Split</button>
+      <button class="tab-button" onclick="openCalc('percentage')">Percentage</button>
+      <button class="tab-button" onclick="openCalc('discount')">Discount</button>
+      <button class="tab-button" onclick="openCalc('tax')">Tax</button>
+      <button class="tab-button" onclick="openCalc('unit')">Unit Price</button>
+      <button class="tab-button" onclick="openCalc('expense')">Expenses</button>
+      <button class="tab-button" onclick="openCalc('currency')">Currency</button>
+      <button class="tab-button" onclick="openCalc('loan')">Loan EMI</button>
+      <button class="tab-button" onclick="openCalc('split')">Bill Split</button>
+    </div>
+
+    <div id="profit" class="calc-section active">
+      <h2>Profit Split Calculator</h2>
+      <input type="number" id="totalIncome" placeholder="Total Income" />
+      <div id="partnerInputs"></div>
+      <button onclick="addPartner()">+ Add Partner</button>
+      <button onclick="calculateProfitSplit()">Calculate</button>
+      <div id="profitResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareProfit" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="percentage" class="calc-section">
+      <h2>Percentage Calculator</h2>
+      <input type="number" id="percentageValue" placeholder="Percentage (%)" />
+      <input type="number" id="percentageOf" placeholder="Of Amount" />
+      <button onclick="calculatePercentage()">Calculate</button>
+      <div id="percentageResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waSharePercentage" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="discount" class="calc-section">
+      <h2>Discount Calculator</h2>
+      <input type="number" id="originalPrice" placeholder="Original Price" />
+      <input type="number" id="discountPercent" placeholder="Discount (%)" />
+      <button onclick="calculateDiscount()">Calculate</button>
+      <div id="discountResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareDiscount" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="tax" class="calc-section">
+      <h2>Tax Calculator</h2>
+      <input type="number" id="taxAmount" placeholder="Amount" />
+      <input type="number" id="taxRate" placeholder="Tax Rate (%) (Default 17)" />
+      <button onclick="calculateTax()">Calculate</button>
+      <div id="taxResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareTax" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="unit" class="calc-section">
+      <h2>Unit Price Calculator</h2>
+      <input type="number" id="totalCost" placeholder="Total Cost" />
+      <input type="number" id="quantity" placeholder="Quantity" />
+      <button onclick="calculateUnitPrice()">Calculate</button>
+      <div id="unitResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareUnit" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="expense" class="calc-section">
+      <h2>Expenses Calculator</h2>
+      <input type="text" id="expenseName" placeholder="Expense Name" />
+      <input type="number" id="expenseAmount" placeholder="Amount" />
+      <button onclick="addExpense()">+ Add</button>
+      <div id="expenseList"></div>
+      <div id="totalExpense"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareExpense" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="currency" class="calc-section">
+      <h2>Currency Converter</h2>
+      <input type="number" id="amountCurrency" placeholder="Amount in PKR" />
+      <select id="convertTo">
+        <option value="USD">USD</option>
+        <option value="SAR">SAR</option>
+        <option value="AED">AED</option>
+        <option value="EUR">EUR</option>
+      </select>
+      <button onclick="convertCurrency()">Convert</button>
+      <div id="currencyResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareCurrency" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="loan" class="calc-section">
+      <h2>Loan EMI Calculator</h2>
+      <input type="number" id="loanAmount" placeholder="Loan Amount" />
+      <input type="number" id="interestRate" placeholder="Interest Rate (%)" />
+      <input type="number" id="loanTerm" placeholder="Term (Months)" />
+      <button onclick="calculateEMI()">Calculate</button>
+      <div id="loanResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+      <a id="waShareLoan" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+    <div id="split" class="calc-section">
+      <h2>Bill Split Calculator</h2>
+      <input type="number" id="billAmount" placeholder="Total Bill" />
+      <input type="number" id="peopleCount" placeholder="Number of People" />
+      <button onclick="calculateBillSplit()">Calculate</button>
+      <div id="splitResult"></div>
+      <button onclick="window.print()">🖨️ Print / Save PDF</button>
+   <a id="waShareSplit" href="#" target="_blank">📤 Share on WhatsApp</a>
+    </div>
+
+  </div>
+  <script src="calculator.js"></script>
+</body>
+  </html>
